@@ -3,9 +3,12 @@ import React from 'react';
 const Camper = React.createClass({
   render: function() {
     return (
-      <div className="camper">
-        User info will go here
-      </div>
+      <li className="camper">
+        <div>{this.props.index}</div>
+        <div>{this.props.camper.username}</div>
+        <div><img src={this.props.camper.img} /></div>
+        <div>{this.props.camper.recent}</div>
+      </li>
     )
   }
 });

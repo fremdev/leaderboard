@@ -14,31 +14,33 @@ const Leaderboard = React.createClass({
       .then(function(response) {
         return response.json();
       })
-      .then(function(recent) {
-        console.log(recent);
+      .then((recent) => {
+        this.setState({recent: recent});
       })
       .catch(function(error) {
         console.log(error);
-    });
+      });
 
     fetch('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
       .then(function(response) {
         return response.json();
       })
-      .then(function(alltime) {
-        console.log(alltime);
+      .then((alltime) => {
+        this.setState({alltime: alltime});
       })
       .catch(function(error) {
         console.log(error);
-    });
+      });
+  },
+  renderCampers: function(camper, index) {
+    return <Camper key={camper.username} camper={camper} index={index + 1} />;
   },
   render: function() {
     return (
       <div className="leaderboard">
-        Rows will go here
-        <Camper />
-        <Camper />
-        <Camper />
+        <ul>
+          {this.state.recent.map(this.renderCampers)}
+        </ul>
       </div>
     )
   }
