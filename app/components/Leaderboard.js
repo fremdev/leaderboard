@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Camper from './Camper';
+require('../styles/leaderboard.scss');
 
 const Leaderboard = React.createClass({
   getInitialState: function() {
@@ -37,11 +38,19 @@ const Leaderboard = React.createClass({
   },
   render: function() {
     return (
-      <div className="leaderboard">
-        <ul>
-          {this.state.recent.map(this.renderCampers)}
-        </ul>
-      </div>
+      <table className="leaderboard">
+        <thead>
+          <tr>
+            <th className="column-place">Place</th>
+            <th className="column-camper">Camper</th>
+            <th className="column-points">Recent Points</th>
+            <th className="column-points">Alltime Points</th>
+          </tr>
+        </thead>
+        <tbody>
+        {this.state.recent.map(this.renderCampers)}
+        </tbody>
+      </table>
     )
   }
 });

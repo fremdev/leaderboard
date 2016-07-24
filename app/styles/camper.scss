@@ -1,0 +1,17 @@
+.camper {
+  img {
+    width: 50px;
+    margin-right: 30px;
+  }
+  .column-place {
+    width: 50px;
+    text-align: center;
+  }
+  .column-points {
+    width: 100px;
+    text-align: center;
+  }
+  .column-camper > * {
+    vertical-align: middle;
+  }
+}
