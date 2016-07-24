@@ -6,6 +6,25 @@
     width: 50px;
   }
   .column-points {
-    width: 100px;
+    width: 125px;
+    cursor: pointer;
+    &.active {
+      background-color: #812D58;
+      cursor: auto;
+      &::after {
+        content: "▼";
+      }
+    }
+  }
+  tr {
+    background: #F0A28E;
+  }
+  th {
+    background: #BA6476;
+    color: #fff;
+    padding: 5px;
+  }
+  tr:nth-child(even) {
+    background: #F5D7A1;
   }
 }

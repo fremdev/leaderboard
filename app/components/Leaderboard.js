@@ -53,8 +53,8 @@ const Leaderboard = React.createClass({
           <tr>
             <th className="column-place">Place</th>
             <th className="column-camper">Camper</th>
-            <th className="column-points"><span onClick={this.handleSortClick.bind(null, true)}>Recent Points</span></th>
-            <th className="column-points"><span onClick={this.handleSortClick.bind(null, false)}>Alltime Points</span></th>
+            <th className={"column-points " + (this.state.isRecent ? "active" : "")}><span onClick={this.handleSortClick.bind(null, true)}>Recent Points</span></th>
+            <th className={"column-points " + (!this.state.isRecent ? "active" : "")}><span onClick={this.handleSortClick.bind(null, false)}>Alltime Points</span></th>
           </tr>
         </thead>
         <tbody>
