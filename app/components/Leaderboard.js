@@ -7,7 +7,8 @@ const Leaderboard = React.createClass({
   getInitialState: function() {
     return ({
         recent: [],
-        alltime: []
+        alltime: [],
+        isRecent: true
       })
   },
   componentDidMount: function() {
@@ -36,19 +37,28 @@ const Leaderboard = React.createClass({
   renderCampers: function(camper, index) {
     return <Camper key={camper.username} camper={camper} index={index + 1} />;
   },
+  handleSortClick: function(sortByRecent) {
+    if((sortByRecent && !this.state.isRecent) ||
+      (!sortByRecent && this.state.isRecent)) {
+        this.setState({
+          isRecent: !this.state.isRecent
+        });
+      }
+  },
   render: function() {
+    let toShow = this.state.isRecent ? 'recent' : 'alltime';
     return (
       <table className="leaderboard">
         <thead>
           <tr>
             <th className="column-place">Place</th>
             <th className="column-camper">Camper</th>
-            <th className="column-points">Recent Points</th>
-            <th className="column-points">Alltime Points</th>
+            <th className="column-points"><span onClick={this.handleSortClick.bind(null, true)}>Recent Points</span></th>
+            <th className="column-points"><span onClick={this.handleSortClick.bind(null, false)}>Alltime Points</span></th>
           </tr>
         </thead>
         <tbody>
-        {this.state.recent.map(this.renderCampers)}
+        {this.state[toShow].map(this.renderCampers)}
         </tbody>
       </table>
     )
