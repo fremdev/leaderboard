@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import "variables.scss";
+.header {
+  width: 95%;
+  max-width: 600px;
+  min-width: 490px;
+  margin: 20px auto;
+  text-align: center;
+  background: $header-background;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  h1 {
+    color: $header-text;
+  	font-family: 'Oswald';
+  	font-size: 42px;
+  	font-weight: 600;
+  	line-height: 48px;
+    margin-top: 15px;
+  	margin-bottom: 5px;
+  	text-transform: uppercase;
+  }
+  .author {
+    color: $accent-color;
+    font-family: 'Oswald';
+    font-style: italic;
+    text-decoration: none;
+  }
+}

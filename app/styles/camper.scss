@@ -1,3 +1,4 @@
+@import "variables.scss";
 .camper {
   img {
     width: 50px;
@@ -23,5 +24,6 @@
     background-color: #812D58 !important;
     color: #fff;
     cursor: pointer;
+    font-weight: bold;
   }
 }

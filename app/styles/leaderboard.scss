@@ -1,4 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:400,700);
+@import "variables.scss";
+body {
+  background: $body-color;
+}
 .leaderboard {
+  color: $table-text-color;
+	font-family: 'Arvo', serif;
   width: 95%;
   max-width: 600px;
   margin: 0 auto;
@@ -9,7 +16,7 @@
     width: 125px;
     cursor: pointer;
     &.active {
-      background-color: #812D58;
+      background-color: $accent-color;
       cursor: auto;
       &::after {
         content: "▼";
@@ -17,14 +24,14 @@
     }
   }
   tr {
-    background: #F0A28E;
+    background: $table-row-color;
   }
   th {
-    background: #BA6476;
+    background: $table-header;
     color: #fff;
     padding: 5px;
   }
   tr:nth-child(even) {
-    background: #F5D7A1;
+    background: $table-row-color-even;
   }
 }
