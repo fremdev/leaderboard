@@ -1,5 +1,7 @@
 # FreeCodeCamp Leaderboard
 
+My version of FreeCodeCamp Leaderboard. Using React.js, AJAX requests with fetch(), stateless functions,  Sass, Babel, Webpack.
+
 ### Objectives
 * I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.
 * I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.
