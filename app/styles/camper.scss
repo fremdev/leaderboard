@@ -11,7 +11,14 @@
     width: 100px;
     text-align: center;
   }
-  .column-camper > * {
+  .column-camper{
+    white-space: nowrap;   
+    &> * {
     vertical-align: middle;
+    }
+  }
+  &:hover {
+    background-color: #cfc;
+    cursor: pointer;
   }
 }
