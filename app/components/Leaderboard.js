@@ -1,5 +1,6 @@
 import React from 'react';
 
+import 'whatwg-fetch';
 import Camper from './Camper';
 require('../styles/leaderboard.scss');
 
